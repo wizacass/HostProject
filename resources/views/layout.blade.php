@@ -7,6 +7,18 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.css">
     </head>
     <body>
-        @yield('content')
+        <nav class="navbar" role="navigation" aria-label="main navigation" style="background: hsl(0, 0%, 96%); padding: 1em">
+            <div class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="/">Home</a>
+                    <a class="navbar-item" href="/diary">Diary</a>
+                    <a class="navbar-item" href="/tasks">Tasks</a>
+                </div>
+            </div>
+        </nav>
+
+        <div style="margin: 2em">
+            @yield('content')
+        </div>
     </body>
 </html>

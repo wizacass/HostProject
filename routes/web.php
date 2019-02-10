@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Route::get('/diary', 'DiaryController@home');
+Route::get('/tasks', 'TaskController@home');
