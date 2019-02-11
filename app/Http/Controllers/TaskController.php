@@ -10,4 +10,9 @@ class TaskController extends Controller
     {
         return view('tasks/index');
     }
+
+    public function store()
+    {
+        dd('new entry added');
+    }
 }

@@ -20,3 +20,4 @@ Route::get('/tasks', 'TaskController@home');
 Route::get('/tasks/validation', function() {
     return view('tasks/validation');
 });
+Route::post('/tasks/validation', 'TaskController@store');

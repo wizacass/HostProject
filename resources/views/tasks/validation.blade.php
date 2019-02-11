@@ -13,7 +13,21 @@
             <div class="field">
                 <label class="label" for="name">Name</label>
                 <div class="control">
-                    <input type="text" class="input" name="name" placeholder="Name" required>
+                    <input type="text" class="input" name="name" placeholder="First Name" required>
+                </div>
+            </div>
+            <br/>
+             <div class="field">
+                <label class="label" for="surname">Surname</label>
+                <div class="control">
+                    <input type="text" class="input" name="surname" placeholder="Last Name" required>
+                </div>
+            </div>
+            <br/>
+             <div class="field">
+                <label class="label" for="school">Shool</label>
+                <div class="control">
+                    <input type="text" class="input" name="school" placeholder="School" required>
                 </div>
             </div>
             <br/>
