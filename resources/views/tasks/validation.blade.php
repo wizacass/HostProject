@@ -11,6 +11,19 @@
             <form method="POST" action="">
             @csrf
 
+            @if ($errors->any())
+            <article class="message is-danger">
+                <div class="message-header"><p>Danger</p></div>
+                <div class="message-body">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                         @endforeach
+                    </ul>
+                </div>
+            </article>
+            @endif
+
             <div class="field">
                 <label class="label" for="name">Name</label>
                 <div class="control">
@@ -35,7 +48,7 @@
             <div class="field">
                 <label class="label" for="age">Age</label>
                 <div class="control">
-                    <select class="select">
+                    <select class="select" name="age">
                         <option value="-">-</option>
                         @for ($i = 14; $i <= 25; $i++)
                             <option value="{{ $i }}">{{ $i }}</option>
@@ -46,12 +59,12 @@
             <br/>
             <div class="field">
                 <label class="label" for="language">Programming language</label>
-                    <label class="checkbox"><input type="checkbox"> C#</label>
-                    <label class="checkbox"><input type="checkbox"> C++</label>
-                    <label class="checkbox"><input type="checkbox"> Pascal</label>
-                    <label class="checkbox"><input type="checkbox"> COBOL</label>
-                    <label class="checkbox"><input type="checkbox"> Fortran</label>
-                    <label class="checkbox"><input type="checkbox"> Assembler</label>
+                    <label class="checkbox"><input type="checkbox" name="language[]"> C#</label>
+                    <label class="checkbox"><input type="checkbox" name="language[]"> C++</label>
+                    <label class="checkbox"><input type="checkbox" name="language[]"> Pascal</label>
+                    <label class="checkbox"><input type="checkbox" name="language[]"> COBOL</label>
+                    <label class="checkbox"><input type="checkbox" name="language[]"> Fortran</label>
+                    <label class="checkbox"><input type="checkbox" name="language[]"> Assembler</label>
             </div>
             <br/><br/>
             <div class="field">

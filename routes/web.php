@@ -17,7 +17,5 @@ Route::get('/', function () {
 
 Route::get('/diary', 'DiaryController@home');
 Route::get('/tasks', 'TaskController@home');
-Route::get('/tasks/validation', function() {
-    return view('tasks/validation');
-});
-Route::post('/tasks/validation', 'TaskController@store');
+Route::get('/tasks/validation', 'ParticipantsController@home');
+Route::post('/tasks/validation', 'ParticipantsController@store');
