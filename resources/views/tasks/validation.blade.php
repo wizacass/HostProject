@@ -2,9 +2,10 @@
 
 @section('title', 'Validation task')
 
+@section('heading', 'Participants registration')
+
 @section('content')
 
-    <h1 class="title" style="text-align: center">Participants registration</h1>
     <div class="columns">
         <div class="column box">
             <form method="POST" action="">
@@ -61,8 +62,9 @@
 
             </form>
         </div>
+
         <div class="column">
-            <p>Existing participants</p>
+            <p class="title is-4" style="text-align: center">Existing participants</p>
         </div>
     </div>
 

@@ -1,8 +1,8 @@
 @extends('layout')
 
-@section('content')
+@section('heading', 'Tasks page')
 
-    <h1 class="title">Tasks page</h1>
+@section('content')
 
     <a href="/tasks/validation">Form Test</a>
 

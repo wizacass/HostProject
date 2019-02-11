@@ -1,7 +1,9 @@
 @extends('layout')
 
+@section('heading', 'Main page')
+
 @section('content')
 
-    <h1 class="title">Main page</h1>
+
 
 @endsection

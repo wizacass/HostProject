@@ -18,6 +18,8 @@
         </nav>
 
         <div style="margin: 2em">
+            <h1 class="title" style="text-align: center">@yield('heading')</h1>
+            <br/>
             @yield('content')
         </div>
     </body>
