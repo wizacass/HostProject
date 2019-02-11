@@ -9,9 +9,18 @@ class ParticipantsController extends Controller
 {
     public function home()
     {
+        $languages = [
+            'C#',
+            'C++',
+            'Pascal',
+            'COBOL',
+            'Fortran',
+            'Assembler',
+        ];
+
         $participants = Participant::all();
 
-        return view('tasks.validation', compact('participants'));
+        return view('tasks.validation', compact('participants', 'languages'));
     }
 
     public function store()
@@ -23,15 +32,15 @@ class ParticipantsController extends Controller
         //     'age' => ['required', 'numeric']
         // ]);
 
-         $attributes = request()->validate([
+        $attributes = request()->validate([
             'name' => ['required', 'min:3'],
             'surname' => ['required', 'min:3'],
             'school' => ['required', 'min:3'],
             'age' => ['required', 'numeric'],
-            //'language'
+            'language'
         ]);
 
-        //dd($attributes);
+        dd(request()->all());
 
         Participant::create($attributes);
 

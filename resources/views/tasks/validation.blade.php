@@ -59,12 +59,15 @@
             <br/>
             <div class="field">
                 <label class="label" for="language">Programming language</label>
-                    <label class="checkbox"><input type="checkbox" name="language[]"> C#</label>
-                    <label class="checkbox"><input type="checkbox" name="language[]"> C++</label>
-                    <label class="checkbox"><input type="checkbox" name="language[]"> Pascal</label>
-                    <label class="checkbox"><input type="checkbox" name="language[]"> COBOL</label>
-                    <label class="checkbox"><input type="checkbox" name="language[]"> Fortran</label>
-                    <label class="checkbox"><input type="checkbox" name="language[]"> Assembler</label>
+                    {{-- <label class="checkbox"><input type="checkbox" name="language[6]"> C#</label>
+                    <label class="checkbox"><input type="checkbox" name="language[1]"> C++</label>
+                    <label class="checkbox"><input type="checkbox" name="language[2]"> Pascal</label>
+                    <label class="checkbox"><input type="checkbox" name="language[3]"> COBOL</label>
+                    <label class="checkbox"><input type="checkbox" name="language[4]"> Fortran</label>
+                    <label class="checkbox"><input type="checkbox" name="language[5]"> Assembler</label> --}}
+                    @for ($i = 1; $i <= count($languages); $i++)
+                        <label class="checkbox"><input type="checkbox" name="language[{{$i}}]"> {{$languages[$i-1]}}</label>
+                    @endfor
             </div>
             <br/><br/>
             <div class="field">
@@ -78,6 +81,32 @@
 
         <div class="column">
             <p class="title is-4" style="text-align: center">Existing participants</p>
+            @if ($participants)
+            <table class="table" style="width: 100%">
+                <thead>
+                    <tr>
+                        <th>First name</th>
+                        <th>Last name</th>
+                        <th>School</th>
+                        <th>Age</th>
+                        <th>Languages</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($participants as $p)
+                        <tr>
+                            <td>{{ $p->name }}</td>
+                            <td>{{ $p->surname }}</td>
+                            <td>{{ $p->school }}</td>
+                            <td>{{ $p->age }}</td>
+                            <td>{{ $p->language }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+            @else
+                <p style="text-align: center">There are no participants yet!</p>
+            @endif
         </div>
     </div>
 
