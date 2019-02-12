@@ -19,7 +19,7 @@ class CreateParticipantsTable extends Migration
             $table->string('surname');
             $table->string('school');
             $table->integer('age');
-            //$table->string('language');
+            $table->string('language');
             $table->timestamps();
         });
     }

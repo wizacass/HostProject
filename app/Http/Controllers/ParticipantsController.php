@@ -7,9 +7,7 @@ use App\Participant;
 
 class ParticipantsController extends Controller
 {
-    public function home()
-    {
-        $languages = [
+    public $langList = [
             'C#',
             'C++',
             'Pascal',
@@ -18,7 +16,10 @@ class ParticipantsController extends Controller
             'Assembler',
         ];
 
+    public function home()
+    {
         $participants = Participant::all();
+        $languages = $this->langList;
 
         return view('tasks.validation', compact('participants', 'languages'));
     }
@@ -40,12 +41,15 @@ class ParticipantsController extends Controller
             'language'
         ]);
 
-        dd(request()->all());
+        $languages = request()->language;
+        $lStr = "";
+        foreach ($languages as $lang => $value)
+        {
+            $lStr = $lStr . $this->langList[$lang - 1] . ' ';
+        }
+        $attributes['language'] = $lStr;
 
         Participant::create($attributes);
-
-        //dd(request());
-        //dd(Participant::All());
 
         return redirect('/tasks/validation');
     }

@@ -80,7 +80,8 @@
         </div>
 
         <div class="column">
-            <p class="title is-4" style="text-align: center">Existing participants</p>
+            <button class="button is-danger is-pulled-right">Clear all data</button>
+            <p class="title is-4 is-pulled left" style="text-align: center">Existing participants</p>
             @if ($participants)
             <table class="table" style="width: 100%">
                 <thead>
