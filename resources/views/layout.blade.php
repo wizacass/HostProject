@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.css">
     </head>
     <body>
-        <nav class="navbar" role="navigation" aria-label="main navigation" style="background: hsl(0, 0%, 96%); padding: 1em">
+        <nav class="navbar is-dark" role="navigation" style="padding-left: 1em">
             <div class="navbar-menu">
                 <div class="navbar-start">
                     <a class="navbar-item" href="/">Home</a>
