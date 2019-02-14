@@ -39,7 +39,7 @@
             </div>
             <br/>
              <div class="field">
-                <label class="label" for="school">Shool</label>
+                <label class="label" for="school">School</label>
                 <div class="control">
                     <input type="text" class="input {{ $errors->has('school') ? 'is-danger' : '' }}" name="school" placeholder="School" value="{{ old('school') }}" required>
                 </div>
@@ -82,10 +82,11 @@
                 <p class="title is-4 is-pulled left" style="text-align: center">Existing participants</p>
             </br>
             </form>
-            @if ($participants)
+            @if (count($participants) > 0)
             <table class="table" style="width: 100%">
                 <thead>
                     <tr>
+                        <th>Number</th>
                         <th>First name</th>
                         <th>Last name</th>
                         <th>School</th>
@@ -94,15 +95,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($participants as $p)
+                    @for ($i = 0; $i < count($participants); $i++)
                         <tr>
-                            <td>{{ $p->name }}</td>
-                            <td>{{ $p->surname }}</td>
-                            <td>{{ $p->school }}</td>
-                            <td>{{ $p->age }}</td>
-                            <td>{{ $p->language }}</td>
+                            <td>{{ $i + 1 }}</td>
+                            <td>{{ $participants[$i]->name }}</td>
+                            <td>{{ $participants[$i]->surname }}</td>
+                            <td>{{ $participants[$i]->school }}</td>
+                            <td>{{ $participants[$i]->age }}</td>
+                            <td>{{ $participants[$i]->language }}</td>
                         </tr>
-                    @endforeach
+                    @endfor
                 </tbody>
             </table>
             @else

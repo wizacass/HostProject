@@ -14,6 +14,7 @@ class ParticipantsController extends Controller
             'COBOL',
             'Fortran',
             'Assembler',
+            'Java'
         ];
 
     public function home()
