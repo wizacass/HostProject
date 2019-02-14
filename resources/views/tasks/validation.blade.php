@@ -27,21 +27,21 @@
             <div class="field">
                 <label class="label" for="name">Name</label>
                 <div class="control">
-                    <input type="text" class="input" name="name" placeholder="First Name" required>
+                    <input type="text" class="input {{ $errors->has('name') ? 'is-danger' : '' }}" name="name" placeholder="First Name" value="{{ old('name') }}" required>
                 </div>
             </div>
             <br/>
              <div class="field">
                 <label class="label" for="surname">Surname</label>
                 <div class="control">
-                    <input type="text" class="input" name="surname" placeholder="Last Name" required>
+                    <input type="text" class="input {{ $errors->has('surname') ? 'is-danger' : '' }}" name="surname" placeholder="Last Name" value="{{ old('surname') }}" required>
                 </div>
             </div>
             <br/>
              <div class="field">
                 <label class="label" for="school">Shool</label>
                 <div class="control">
-                    <input type="text" class="input" name="school" placeholder="School" required>
+                    <input type="text" class="input {{ $errors->has('school') ? 'is-danger' : '' }}" name="school" placeholder="School" value="{{ old('school') }}" required>
                 </div>
             </div>
             <br/>
@@ -80,8 +80,14 @@
         </div>
 
         <div class="column">
-            <button class="button is-danger is-pulled-right">Clear all data</button>
-            <p class="title is-4 is-pulled left" style="text-align: center">Existing participants</p>
+            <form method="POST" action="">
+                @csrf
+                @method('DELETE')
+
+                <button class="button is-danger is-pulled-right">Clear all data</button>
+                <p class="title is-4 is-pulled left" style="text-align: center">Existing participants</p>
+            </br>
+            </form>
             @if ($participants)
             <table class="table" style="width: 100%">
                 <thead>

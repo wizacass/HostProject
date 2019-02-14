@@ -19,3 +19,4 @@ Route::get('/diary', 'DiaryController@home');
 Route::get('/tasks', 'TaskController@home');
 Route::get('/tasks/validation', 'ParticipantsController@home');
 Route::post('/tasks/validation', 'ParticipantsController@store');
+Route::delete('/tasks/validation', 'ParticipantsController@destroy');

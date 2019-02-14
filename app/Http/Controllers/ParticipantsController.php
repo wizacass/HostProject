@@ -26,17 +26,10 @@ class ParticipantsController extends Controller
 
     public function store()
     {
-        // $attributes = request()->validate([
-        //     'name' => ['required', 'regex:[a-zA-z]', 'min:3'],
-        //     'surname' => ['required', 'regex:[a-zA-z]', 'min:3'],
-        //     'school' => ['required', 'regex:[a-zA-z]', 'min:3'],
-        //     'age' => ['required', 'numeric']
-        // ]);
-
         $attributes = request()->validate([
-            'name' => ['required', 'min:3'],
-            'surname' => ['required', 'min:3'],
-            'school' => ['required', 'min:3'],
+            'name' => ['required', 'min:3', 'alpha'],
+            'surname' => ['required', 'min:3', 'alpha'],
+            'school' => ['required', 'min:3', 'alpha'],
             'age' => ['required', 'numeric'],
             'language'
         ]);
@@ -50,6 +43,13 @@ class ParticipantsController extends Controller
         $attributes['language'] = $lStr;
 
         Participant::create($attributes);
+
+        return redirect('/tasks/validation');
+    }
+
+    public function destroy()
+    {
+        Participant::truncate();
 
         return redirect('/tasks/validation');
     }
