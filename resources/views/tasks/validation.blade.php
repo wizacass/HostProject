@@ -59,12 +59,6 @@
             <br/>
             <div class="field">
                 <label class="label" for="language">Programming language</label>
-                    {{-- <label class="checkbox"><input type="checkbox" name="language[6]"> C#</label>
-                    <label class="checkbox"><input type="checkbox" name="language[1]"> C++</label>
-                    <label class="checkbox"><input type="checkbox" name="language[2]"> Pascal</label>
-                    <label class="checkbox"><input type="checkbox" name="language[3]"> COBOL</label>
-                    <label class="checkbox"><input type="checkbox" name="language[4]"> Fortran</label>
-                    <label class="checkbox"><input type="checkbox" name="language[5]"> Assembler</label> --}}
                     @for ($i = 1; $i <= count($languages); $i++)
                         <label class="checkbox"><input type="checkbox" name="language[{{$i}}]"> {{$languages[$i-1]}}</label>
                     @endfor

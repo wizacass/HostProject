@@ -36,9 +36,12 @@ class ParticipantsController extends Controller
 
         $languages = request()->language;
         $lStr = "";
-        foreach ($languages as $lang => $value)
+        if(count($languages) > 0)
         {
-            $lStr = $lStr . $this->langList[$lang - 1] . ' ';
+            foreach ($languages as $lang => $value)
+            {
+                $lStr = $lStr . $this->langList[$lang - 1] . ' ';
+            }
         }
         $attributes['language'] = $lStr;
 
