@@ -22,3 +22,4 @@ Route::get('/tasks', function(){
 Route::get('/tasks/validation', 'ParticipantsController@home');
 Route::post('/tasks/validation', 'ParticipantsController@store');
 Route::delete('/tasks/validation', 'ParticipantsController@destroy');
+Route::resource('/tasks/list', 'TasksController');

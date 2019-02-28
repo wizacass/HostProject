@@ -1,10 +1,12 @@
-@extends('layout')
+@extends('layouts/main')
 
 @section('heading', 'Tasks page')
 
 @section('content')
 
-    <a href="/tasks/validation">Participants registration</a>
-    <a href="/tasks/list">Basic Task List</a>
+    <ul>
+        <li><a href="/tasks/validation">Participants registration</a></li>
+        <li><a href="/tasks/list">Basic Task List</a></li>
+    </ul>
 
 @endsection
