@@ -4,6 +4,7 @@
 
 @section('content')
 
-    <a href="/tasks/validation">Form Test</a>
+    <a href="/tasks/validation">Participants registration</a>
+    <a href="/tasks/list">Basic Task List</a>
 
 @endsection
