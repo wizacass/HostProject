@@ -22,12 +22,19 @@
 @endsection
 
 @section('column2')
-<ul>
-
-    @foreach ($tasks as $task)
-        <li>
-        <p>{{$task->name}}</p>
-        </li>
-    @endforeach
-</ul>
-    @endsection
+    <ul>
+        @foreach ($tasks as $task)
+            <li>
+                <div class="box level">
+                    <p class="level-left">{{ $task->name }}</p>
+                    <br/>
+                    <form method="POST" action="/tasks/list/{{ $task->id }}">
+                        @method('DELETE')
+                        @csrf
+                        <button class="button is-danger level-right" type="submit">Delete</button>
+                    </form>
+                </div>
+            </li>
+        @endforeach
+    </ul>
+@endsection
