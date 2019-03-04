@@ -4,7 +4,7 @@
 
 @section('column1')
 
-<form action="/task/list" method="POST">
+<form action="/tasks/list" method="POST">
     @csrf
 
     <div class="field">
@@ -22,5 +22,12 @@
 @endsection
 
 @section('column2')
-    <p>Column2</p>
-@endsection
+<ul>
+
+    @foreach ($tasks as $task)
+        <li>
+        <p>{{$task->name}}</p>
+        </li>
+    @endforeach
+</ul>
+    @endsection
