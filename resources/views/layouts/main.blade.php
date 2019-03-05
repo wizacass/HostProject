@@ -11,8 +11,9 @@
             <div class="navbar-menu">
                 <div class="navbar-start">
                     <a class="navbar-item" href="/">Home</a>
-                    <a class="navbar-item" href="/diary">Diary</a>
+                    {{-- <a class="navbar-item" href="/diary">Diary</a> --}}
                     <a class="navbar-item" href="/tasks">Tasks</a>
+                    <a class="navbar-item" href="/apps">JavaScript</a>
                 </div>
             </div>
         </nav>

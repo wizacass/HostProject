@@ -10,4 +10,7 @@
             @yield('column2')
         </div>
     </div>
+
+    @yield('scripts')
+
 @endsection

@@ -19,7 +19,11 @@ Route::get('/diary', 'DiaryController@home');
 Route::get('/tasks', function(){
     return view('/tasks/index');
 });
+
 Route::get('/tasks/validation', 'ParticipantsController@home');
 Route::post('/tasks/validation', 'ParticipantsController@store');
 Route::delete('/tasks/validation', 'ParticipantsController@destroy');
 Route::resource('/tasks/list', 'TasksController');
+
+Route::get('/apps', 'AppsController@home');
+Route::get('/apps/binary', 'AppsController@binary');
