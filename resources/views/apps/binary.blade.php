@@ -8,11 +8,9 @@
 
     <p>I convert from decimal to binary using Vue.js!</p>
 
-    <div id="binary">
-        {{-- <p>{{ binary.message }}</p> --}}
+    <div id="app">
+        <dec-to-bin></dec-to-bin>
     </div>
-
-    <script src='/js/app.js'></script>
 
 @endsection
 
@@ -24,4 +22,5 @@
 
 @section('scripts')
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src='/js/app.js'></script>
 @endsection
