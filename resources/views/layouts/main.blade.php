@@ -5,6 +5,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.css">
+        <style>
+        .gradient{
+            background-image: linear-gradient(to right, hsl(171, 100%, 41%), hsl(204, 86%, 53%));
+        }
+        </style>
     </head>
     <body>
         <nav class="navbar is-dark" role="navigation" style="padding-left: 1em">
@@ -18,7 +23,7 @@
             </div>
         </nav>
 
-        <section class="hero is-info">
+        <section class="hero is-info gradient">
             <div class="hero-body">
                 <div class="container">
                     <h1 class="title" style="text-align: center">@yield('heading')</h1>
