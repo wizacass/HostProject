@@ -14,7 +14,9 @@ class PublicationsController extends Controller
      */
     public function index()
     {
-        return view('/tasks/books/publications/index');
+        $pubs = Publication::All();
+
+        return view('/tasks/books/publications/index', compact('pubs'));
     }
 
     /**
@@ -33,9 +35,22 @@ class PublicationsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+        $attributes = request()->validate([
+            'name' => ['required', 'max:255'],
+            'code' => ['required', 'max:255'],
+            'price' => ['required', 'regex:/^\d*(\.\d{1,2})?$/'],
+        ]);
+
+        $price = (int)$attributes['price'] *= 100;
+        $attributes['price'] = $price;
+
+        dd($attributes);
+
+        Publication::create($attributes);
+
+        return redirect('tasks/books/publications');
     }
 
     /**
