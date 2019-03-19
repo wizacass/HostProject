@@ -14,7 +14,7 @@ class SubscribersController extends Controller
      */
     public function index()
     {
-        //
+        return view('/tasks/books/subscribers/index');
     }
 
     /**

@@ -14,7 +14,7 @@ class PublicationsController extends Controller
      */
     public function index()
     {
-        //
+        return view('/tasks/books/publications/index');
     }
 
     /**

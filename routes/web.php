@@ -28,7 +28,8 @@ Route::resource('/tasks/list', 'TasksController');
 Route::get('/tasks/books', function(){
     return view('/tasks/books/index');
 });
-//Route::resource('/tasks/books', 'PublicationController');
+Route::resource('/tasks/books/publications', 'PublicationsController');
+Route::resource('/tasks/books/subscribers', 'SubscribersController');
 
 Route::get('/apps', 'AppsController@home');
 Route::get('/apps/binary', 'AppsController@binary');
