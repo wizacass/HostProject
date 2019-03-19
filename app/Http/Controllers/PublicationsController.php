@@ -46,7 +46,7 @@ class PublicationsController extends Controller
         $price = (int)$attributes['price'] *= 100;
         $attributes['price'] = $price;
 
-        dd($attributes);
+        //dd($attributes);
 
         Publication::create($attributes);
 

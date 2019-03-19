@@ -6,21 +6,36 @@
 
 <h2 class="subtitle has-text-centered">Table to see all the publications</h2>
 
- {{-- <ul>
-        @foreach ($tasks as $task)
-            <li>
-                <div class="box level">
-                    <p class="level-left">{{ $task->name }}</p>
-                    <br/>
-                    <form method="POST" action="/tasks/list/{{ $task->id }}">
-                        @method('DELETE')
+<table class="table is-striped is-fullwidth">
+    <thead>
+        <th>Name</th>
+        <th>Code</th>
+        <th>Price</th>
+        <th colspan="2"></th>
+    </thead>
+    <tbody>
+        @foreach ($pubs as $publication)
+            <tr>
+                <td>{{ $publication->name }}</td>
+                <td>{{ $publication->code }}</td>
+                <td>{{ $publication->price*0.01 }}</td>
+                <td>
+                    <form method="POST" action="/tasks/list/{{ $publication->id }}">
                         @csrf
-                        <button class="button is-danger level-right" type="submit">Delete</button>
+                        <button class="button is-info is-rounded" type="submit">View</button>
                     </form>
-                </div>
-            </li>
+                </td>
+                <td>
+                    <form method="POST" action="/tasks/list/{{ $publication->id }}">
+                        @csrf
+                        @method('DELETE')
+                        <button class="button is-danger is-rounded" type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
         @endforeach
-    </ul> --}}
+    </tbody>
+    </table>
 
 @endsection
 
