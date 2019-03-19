@@ -40,7 +40,7 @@ class PublicationsController extends Controller
         $attributes = request()->validate([
             'name' => ['required', 'max:255'],
             'code' => ['required', 'max:255'],
-            'price' => ['required', 'regex:/^\d*(\.\d{1,2})?$/'],
+            'price' => ['required', 'max:10', 'regex:/^\d*(\.\d{1,2})?$/'],
         ]);
 
         $price = (int)$attributes['price'] *= 100;
