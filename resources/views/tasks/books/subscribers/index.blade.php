@@ -70,7 +70,54 @@
             <label class="label" for="name">Name</label>
         </div>
         <div class="level-item">
-            <input type="text" class="input is-rounded {{ $errors->has('name') ? 'is-danger' : '' }}" placeholder="Book Title" value="{{ old('name') }}" name="name" id="pub-name" required>
+            <input type="text" class="input is-rounded {{ $errors->has('name') ? 'is-danger' : '' }}" placeholder="Full name" value="{{ old('name') }}" name="name" id="sub-name" required>
+        </div>
+    </div>
+
+    <div class="level field">
+        <div class="level-item">
+            <label class="label" for="address">Address</label>
+        </div>
+        <div class="level-item">
+            <input type="text" class="input is-rounded {{ $errors->has('address') ? 'is-danger' : '' }}" placeholder="Address" value="{{ old('address') }}" name="address" id="sub-address" required>
+        </div>
+    </div>
+
+     <!--TODO: Change to dropdown 1-12 -->
+    <div class="level field">
+        <div class="level-item">
+            <label class="label" for="name">Start</label>
+        </div>
+        <div class="level-item">
+            <input type="text" class="input is-rounded {{ $errors->has('start') ? 'is-danger' : '' }}" placeholder="Starting month" value="{{ old('month') }}" name="month" id="sub-month" required>
+        </div>
+    </div>
+
+    <div class="level field">
+        <div class="level-item">
+            <label class="label" for="name">Duration</label>
+        </div>
+        <div class="level-item">
+            <input type="text" class="input is-rounded {{ $errors->has('duration') ? 'is-danger' : '' }}" placeholder="Subscribtion Duration" value="{{ old('duration') }}" name="duration" id="sub duration" required>
+        </div>
+    </div>
+
+    <!--TODO: Change to dropdown with all existing codes -->
+    <div class="level field">
+        <div class="level-item">
+            <label class="label" for="name">Code</label>
+        </div>
+        <div class="level-item">
+            <input type="text" class="input is-rounded {{ $errors->has('code') ? 'is-danger' : '' }}" placeholder="Publication code" value="{{ old('code') }}" name="code" id="sub-code" required>
+        </div>
+    </div>
+
+    <div class="level field">
+        <div class="level-item">
+            <label class="label" for="name">Count</label>
+        </div>
+        <div class="level-item">
+            <input type="text" class="input is-rounded {{ $errors->has('count') ? 'is-danger' : '' }}" placeholder="Publications count" value="{{ old('count') }}" name="count" id="sub-count" required>
         </div>
     </div>
 

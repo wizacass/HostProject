@@ -36,7 +36,11 @@ class SubscribersController extends Controller
      */
     public function store()
     {
-        dd(Request());
+        $attributes = request()->validate([
+
+        ]);
+
+        dd(request());
 
         return redirect('tasks/books/subscribers');
     }
