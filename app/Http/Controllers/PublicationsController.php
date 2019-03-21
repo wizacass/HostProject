@@ -32,14 +32,13 @@ class PublicationsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store()
     {
         $attributes = request()->validate([
             'name' => ['required', 'max:255'],
-            'code' => ['required', 'max:255'],
+            'code' => ['required', 'max:255', 'unique:publications,code'],
             'price' => ['required', 'max:10', 'regex:/^\d*(\.\d{1,2})?$/'],
         ]);
 
@@ -93,8 +92,10 @@ class PublicationsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Publication $publication)
     {
-        //
+        $publication->delete();
+
+        return redirect('tasks/books/publications');
     }
 }

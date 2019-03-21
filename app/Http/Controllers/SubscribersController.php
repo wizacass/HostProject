@@ -14,7 +14,9 @@ class SubscribersController extends Controller
      */
     public function index()
     {
-        return view('/tasks/books/subscribers/index');
+        $subs = Subscriber::All();
+
+        return view('/tasks/books/subscribers/index', compact('subs'));
     }
 
     /**
@@ -30,12 +32,13 @@ class SubscribersController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+        dd(Request());
+
+        return redirect('tasks/books/subscribers');
     }
 
     /**

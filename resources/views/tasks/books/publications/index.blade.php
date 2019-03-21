@@ -20,13 +20,13 @@
                 <td>{{ $publication->code }}</td>
                 <td>{{ $publication->price*0.01 }}</td>
                 <td>
-                    <form method="POST" action="/tasks/list/{{ $publication->id }}">
+                    <form method="POST" action="/tasks/list/books/publications/{{ $publication->id }}">
                         @csrf
                         <button class="button is-info is-rounded" type="submit">View</button>
                     </form>
                 </td>
                 <td>
-                    <form method="POST" action="/tasks/list/{{ $publication->id }}">
+                    <form method="POST" action="/tasks/books/publications/{{ $publication->id }}">
                         @csrf
                         @method('DELETE')
                         <button class="button is-danger is-rounded" type="submit">Delete</button>
@@ -94,20 +94,5 @@
     </div>
 
 </form>
-
-{{-- <form action="/tasks/list" method="POST">
-    @csrf
-
-    <div class="field">
-        <label class="label" for="task">Task</label>
-        <input type="text" class="input" name="name" id="task-name" required>
-    </div>
-
-    <div class="field">
-        <div class="control">
-            <button type="submit" class="button is-link">Add task</button>
-        </div>
-    </div>
-</form> --}}
 
 @endsection
