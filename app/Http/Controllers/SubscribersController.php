@@ -37,10 +37,17 @@ class SubscribersController extends Controller
     public function store()
     {
         $attributes = request()->validate([
-
+            'name' => ['required', 'max:255'],
+            'address' => ['required', 'max:255'],
+            'start' => ['required', 'integer', 'between:1,12'],
+            'duration' => ['required', 'integer'],
+            'publication_code' => ['required', 'max:255'],
+            'count' => ['required', 'integer']
         ]);
 
-        dd(request());
+        //dd($attributes);
+
+        Subscriber::create($attributes);
 
         return redirect('tasks/books/subscribers');
     }

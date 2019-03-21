@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Subscriber extends Model
 {
     protected $fillable = [
-        'name', 'address', 'start', 'duraation', 'publication_code', 'count'
+        'name', 'address', 'start', 'duration', 'publication_code', 'count'
     ];
 }
