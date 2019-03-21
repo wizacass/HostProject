@@ -18,13 +18,20 @@
                 <!--TODO: Data for subscribers -->
                 <td>{{ $subscriber->name }}</td>
                 <td>
-                    <form method="POST" action="/tasks/list/{{ $subscriber->id }}">
+                    <form method="POST" action="/tasks/books/subscribers/{{ $subscriber->id }}">
+                        @csrf
+                        <button class="button is-info is-rounded" type="submit">View</button>
+                    </form>
+                </td>
+
+                <td>
+                    <form method="POST" action="/tasks/books/subscribers/{{ $subscriber->id }}">
                         @csrf
                         <button class="button is-info is-rounded" type="submit">View</button>
                     </form>
                 </td>
                 <td>
-                    <form method="POST" action="/tasks/list/{{ $subscriber->id }}">
+                    <form method="POST" action="/tasks/books/subscribers/{{ $subscriber->id }}">
                         @csrf
                         @method('DELETE')
                         <button class="button is-danger is-rounded" type="submit">Delete</button>
@@ -66,8 +73,6 @@
             <input type="text" class="input is-rounded {{ $errors->has('name') ? 'is-danger' : '' }}" placeholder="Book Title" value="{{ old('name') }}" name="name" id="pub-name" required>
         </div>
     </div>
-
-
 
     <div class="level field">
         <div class="level-item"></div>
