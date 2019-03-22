@@ -10,6 +10,11 @@
     <thead>
         <!--TODO: Header for subscribers -->
         <th>Name</th>
+        <th>Address</th>
+        <th>Start</th>
+        <th>Duration</th>
+        <th>Code</th>
+        <th>Count</th>
         <th colspan="2"></th>
     </thead>
     <tbody>
@@ -17,12 +22,11 @@
             <tr>
                 <!--TODO: Data for subscribers -->
                 <td>{{ $subscriber->name }}</td>
-                <td>
-                    <form method="POST" action="/tasks/books/subscribers/{{ $subscriber->id }}">
-                        @csrf
-                        <button class="button is-info is-rounded" type="submit">View</button>
-                    </form>
-                </td>
+                <td>{{ $subscriber->address }}</td>
+                <td>{{ $subscriber->start }}</td>
+                <td>{{ $subscriber->duration }}</td>
+                <td>{{ $subscriber->publication_code }}</td>
+                <td>{{ $subscriber->count }}</td>
 
                 <td>
                     <form method="POST" action="/tasks/books/subscribers/{{ $subscriber->id }}">
