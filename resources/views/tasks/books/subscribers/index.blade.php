@@ -65,6 +65,7 @@
     <h2 class="subtitle has-text-centered">Register new Subscriber</h2>
 
     <!--TODO: Register form for subscribers -->
+    <!--TODO: Shift to 2 comun layout insode the form -->
     <div class="level field">
         <div class="level-item">
             <label class="label" for="name">Name</label>
@@ -84,12 +85,28 @@
     </div>
 
      <!--TODO: Change to dropdown 1-12 -->
-    <div class="level field">
+    {{-- <div class="level field">
         <div class="level-item">
             <label class="label" for="start">Start</label>
         </div>
         <div class="level-item">
             <input type="text" class="input is-rounded {{ $errors->has('start') ? 'is-danger' : '' }}" placeholder="Starting month" value="{{ old('start') }}" name="start" id="sub-month" required>
+        </div>
+    </div> --}}
+
+    <div class="field level">
+        <div class="level-item">
+            <label class="label" for="start">Start</label>
+        </div>
+        <div class="control">
+            <div class="select" >
+            <select name="start">
+                <option value="-">-</option>
+                @for ($i = 1; $i <= 12; $i++)
+                    <option value="{{ $i }}">{{ $i }}</option>
+                @endfor
+            </select>
+            </div>
         </div>
     </div>
 
