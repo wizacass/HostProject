@@ -58,9 +58,12 @@ class SubscribersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Subscriber $subscriber)
     {
-        //
+        //$subscriber = Subscriber::find($id);
+       // dd($subscriber);
+
+        return view('/tasks/books/subscribers/show', compact('subscriber'));
     }
 
     /**
