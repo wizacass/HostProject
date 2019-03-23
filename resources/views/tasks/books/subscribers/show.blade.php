@@ -1,6 +1,8 @@
 @extends('layouts/main')
 
-@section('title', '{{ $subscriber->name }}')
+@section('title', 'Books task')
+
+@section('heading', 'Subscriber')
 
 @section('content')
 
