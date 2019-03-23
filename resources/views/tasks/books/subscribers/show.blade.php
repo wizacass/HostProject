@@ -13,4 +13,9 @@
     <li>{{ $subscriber->count }}</li>
 </ul>
 
+<form action="/tasks/books/subscribers/{{ $subscriber->id }}/edit">
+    @csrf
+    <button class="button is-info is-rounded" type="submit">Edit</button>
+</form>
+
 @endsection

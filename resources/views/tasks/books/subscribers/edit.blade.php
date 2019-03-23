@@ -1,57 +1,11 @@
-@extends('layouts/columns')
+@extends('layouts/main')
 
-@section('heading', 'Books Task')
+@section('title', '{{ $subscriber->name }}')
 
-@section('column1')
-
-<h2 class="subtitle has-text-centered">Table to see all the subscribers</h2>
-
-<table class="table is-striped is-fullwidth">
-    <thead>
-        <!--TODO: Header for subscribers -->
-        <th>Name</th>
-        <th>Address</th>
-        <th>Start</th>
-        <th>Duration</th>
-        <th>Code</th>
-        <th>Count</th>
-        <th colspan="2"></th>
-    </thead>
-    <tbody>
-        @foreach ($subs as $subscriber)
-            <tr>
-                <!--TODO: Data for subscribers -->
-                <td>{{ $subscriber->name }}</td>
-                <td>{{ $subscriber->address }}</td>
-                <td>{{ $subscriber->start }}</td>
-                <td>{{ $subscriber->duration }}</td>
-                <td>{{ $subscriber->publication_code }}</td>
-                <td>{{ $subscriber->count }}</td>
-
-                <td>
-                    <form action="/tasks/books/subscribers/{{ $subscriber->id }}">
-                        @csrf
-                        <button class="button is-info is-rounded" type="submit">View</button>
-                    </form>
-                </td>
-
-                <td>
-                    <form method="POST" action="/tasks/books/subscribers/{{ $subscriber->id }}">
-                        @csrf
-                        @method('DELETE')
-                        <button class="button is-danger is-rounded" type="submit">Delete</button>
-                    </form>
-                </td>
-            </tr>
-        @endforeach
-    </tbody>
-    </table>
-
-@endsection
-
-@section('column2')
+@section('content')
 
 <form action="/tasks/books/subscribers" method="POST">
+    @method('PATCH')
     @csrf
 
     @if ($errors->any())
@@ -67,7 +21,7 @@
     </article>
     @endif
 
-    <h2 class="subtitle has-text-centered">Register new Subscriber</h2>
+    <h2 class="subtitle has-text-centered">Update a Subscriber</h2>
 
     <!--TODO: Register form for subscribers -->
     <!--TODO: Shift to 2 comun layout insode the form -->
@@ -76,7 +30,7 @@
             <label class="label" for="name">Name</label>
         </div>
         <div class="level-item">
-            <input type="text" class="input is-rounded {{ $errors->has('name') ? 'is-danger' : '' }}" placeholder="Full name" value="{{ old('name') }}" name="name" id="sub-name" required>
+            <input type="text" class="input is-rounded {{ $errors->has('name') ? 'is-danger' : '' }}" placeholder="Full name" value="{{ $subscriber->name }}" name="name" id="sub-name" required>
         </div>
     </div>
 
@@ -146,7 +100,7 @@
     <div class="level field">
         <div class="level-item"></div>
         <div class="control level-item">
-            <button type="submit" class="button is-link is-rounded">Register subscriber</button>
+            <button type="submit" class="button is-link is-rounded">Update</button>
         </div>
     </div>
 

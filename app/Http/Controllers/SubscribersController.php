@@ -60,9 +60,6 @@ class SubscribersController extends Controller
      */
     public function show(Subscriber $subscriber)
     {
-        //$subscriber = Subscriber::find($id);
-       // dd($subscriber);
-
         return view('/tasks/books/subscribers/show', compact('subscriber'));
     }
 
@@ -72,9 +69,9 @@ class SubscribersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Subscriber $subscriber)
     {
-        //
+        return view('/tasks/books/subscribers/edit', compact('subscriber'));
     }
 
     /**
