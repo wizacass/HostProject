@@ -58,9 +58,9 @@ class PublicationsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Publication $publication)
     {
-        //
+        return view('/tasks/books/publications/show', compact('publication'));
     }
 
     /**

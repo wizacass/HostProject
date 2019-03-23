@@ -20,7 +20,7 @@
                 <td>{{ $publication->code }}</td>
                 <td>{{ $publication->price*0.01 }}</td>
                 <td>
-                    <form method="POST" action="/tasks/books/publications/{{ $publication->id }}">
+                    <form action="/tasks/books/publications/{{ $publication->id }}">
                         @csrf
                         <button class="button is-info is-rounded" type="submit">View</button>
                     </form>
