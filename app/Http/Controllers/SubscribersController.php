@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Subscriber;
+use App\Publication;
 
 class SubscribersController extends Controller
 {
@@ -15,8 +16,9 @@ class SubscribersController extends Controller
     public function index()
     {
         $subs = Subscriber::All();
+        $pubs = Publication::All();
 
-        return view('/tasks/books/subscribers/index', compact('subs'));
+        return view('/tasks/books/subscribers/index', compact('subs', 'pubs'));
     }
 
     /**
@@ -40,9 +42,9 @@ class SubscribersController extends Controller
             'name' => ['required', 'max:255'],
             'address' => ['required', 'max:255'],
             'start' => ['required', 'integer', 'between:1,12'],
-            'duration' => ['required', 'integer'],
+            'duration' => ['required', 'integer', 'between:1,12'],
             'publication_code' => ['required', 'max:255'],
-            'count' => ['required', 'integer']
+            'count' => ['required', 'integer', 'between:1,20']
         ]);
 
         //dd($attributes);

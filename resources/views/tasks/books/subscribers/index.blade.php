@@ -101,8 +101,8 @@
                     <label class="label" for="start">Starting month</label>
                     <div class="control">
                         <div class="select" >
-                            <select name="start">
-                                <option value="-">-</option>
+                            <select name="start" required>
+                                <option value="">-</option>
                                 @for ($i = 1; $i <= 12; $i++)
                                     <option value="{{ $i }}">{{ $i }}</option>
                                 @endfor
@@ -113,30 +113,32 @@
             </div>
             <div class="column">
                 <div class="field">
-                    <label class="label" for="code">Publication Code</label>
+                    <label class="label" for="publication_code">Publication Code</label>
                     <div class="control">
-                        <div class="select" >
-                            <select name="code">
-                                <option value="-">-</option>
-                                @for ($i = 1; $i <= 12; $i++)
-                                    <option value="{{ $i }}">{{ $i }}</option>
-                                @endfor
+                        <div class="select">
+                            <select name="publication_code" required>
+                                <option value="">-</option>
+                                @foreach ($pubs as $publication)
+                                    <option value="{{ $publication->code }}">{{ $publication->code }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="columns">
             <div class="column">
                 <div class="field">
                     <label class="label" for="duration">Duration</label>
                     <div class="control">
-                        <input type="text"
-                            class="input is-rounded {{ $errors->has('duration') ? 'is-danger' : '' }}"
-                            placeholder="Subscribtion Duration" value="{{ old('duration') }}"
-                            name="duration" id="sub-duration" required>
+                        <div class="select" >
+                            <select name="duration" required>
+                                <option value="">-</option>
+                                <option value="1">1 month</option>
+                                <option value="3">3 months</option>
+                                <option value="6">6 months</option>
+                                <option value="12">12 months</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -146,7 +148,7 @@
                     <div class="control">
                         <input type="text"
                             class="input is-rounded {{ $errors->has('count') ? 'is-danger' : '' }}"
-                            placeholder="Publications count" value="{{ old('count') }}"
+                            placeholder="Count" value="{{ old('count') }}"
                             name="count" id="sub-count" required>
                     </div>
                 </div>
