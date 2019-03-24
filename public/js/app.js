@@ -48975,12 +48975,6 @@ Vue.component('dec-to-bin', __webpack_require__(/*! ./components/DecToBin.vue */
 var app = new Vue({
   el: '#app'
 });
-var binary = new Vue({
-  el: '#binary',
-  data: {
-    message: 'Hello Vue!'
-  }
-});
 
 /***/ }),
 

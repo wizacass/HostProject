@@ -69,9 +69,9 @@ class PublicationsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Publication $publication)
     {
-        //
+        return view('/tasks/books/publications/edit', compact('publication'));
     }
 
     /**
