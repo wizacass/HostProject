@@ -1,4 +1,4 @@
-@extends('layouts/main')
+@extends('layouts/books')
 
 @section('heading', 'Books Task')
 

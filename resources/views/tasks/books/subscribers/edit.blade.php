@@ -1,8 +1,18 @@
-@extends('layouts/main')
+@extends('layouts/books')
 
-@section('title', 'Books task')
+@section('title')
+
+    {{ $subscriber->name }}
+
+@endsection
 
 @section('heading', 'Subscriber')
+@section('back-link', '/tasks/books/subscribers')
+@section('back-text')
+
+    <b>UP</b>
+
+@endsection
 
 @section('content')
 

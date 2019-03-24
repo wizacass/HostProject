@@ -1,6 +1,13 @@
-@extends('layouts/columns')
+@extends('layouts/columns-books')
 
+@section('title', 'Publications admin')
 @section('heading', 'Books Task')
+@section('back-link', '/tasks/books')
+@section('back-text')
+
+    <b>UP</b>
+
+@endsection
 
 @section('column1')
 
@@ -20,8 +27,7 @@
                 <td>{{ $publication->code }}</td>
                 <td>{{ $publication->price*0.01 }}</td>
                 <td>
-                    <form action="/tasks/books/publications/{{ $publication->id }}">
-                        @csrf
+                    <form action="/tasks/books/publications/{{ $publication->id }}/">
                         <button class="button is-info is-rounded" type="submit">View</button>
                     </form>
                 </td>

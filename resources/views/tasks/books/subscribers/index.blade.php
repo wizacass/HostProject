@@ -1,6 +1,13 @@
-@extends('layouts/columns')
+@extends('layouts/columns-books')
 
+@section('title', 'Subscribers admin')
 @section('heading', 'Books Task')
+@section('back-link', '/tasks/books')
+@section('back-text')
+
+    <b>UP</b>
+
+@endsection
 
 @section('column1')
 
@@ -8,7 +15,6 @@
 
 <table class="table is-striped is-fullwidth">
     <thead>
-        <!--TODO: Header for subscribers -->
         <th>Name</th>
         <th>Address</th>
         <th>Start</th>
@@ -20,7 +26,6 @@
     <tbody>
         @foreach ($subs as $subscriber)
             <tr>
-                <!--TODO: Data for subscribers -->
                 <td>{{ $subscriber->name }}</td>
                 <td>{{ $subscriber->address }}</td>
                 <td>{{ $subscriber->start }}</td>
@@ -29,8 +34,7 @@
                 <td>{{ $subscriber->count }}</td>
 
                 <td>
-                    <form action="/tasks/books/subscribers/{{ $subscriber->id }}">
-                        @csrf
+                    <form action="/tasks/books/subscribers/{{ $subscriber->id }}/">
                         <button class="button is-info is-rounded" type="submit">View</button>
                     </form>
                 </td>
@@ -69,85 +73,90 @@
 
     <h2 class="subtitle has-text-centered">Register new Subscriber</h2>
 
-    <!--TODO: Register form for subscribers -->
-    <!--TODO: Shift to 2 comun layout insode the form -->
-    <div class="level field">
-        <div class="level-item">
+    <div class="box">
+
+        <div class="field">
             <label class="label" for="name">Name</label>
-        </div>
-        <div class="level-item">
-            <input type="text" class="input is-rounded {{ $errors->has('name') ? 'is-danger' : '' }}" placeholder="Full name" value="{{ old('name') }}" name="name" id="sub-name" required>
-        </div>
-    </div>
-
-    <div class="level field">
-        <div class="level-item">
-            <label class="label" for="address">Address</label>
-        </div>
-        <div class="level-item">
-            <input type="text" class="input is-rounded {{ $errors->has('address') ? 'is-danger' : '' }}" placeholder="Address" value="{{ old('address') }}" name="address" id="sub-address" required>
-        </div>
-    </div>
-
-     <!--TODO: Change to dropdown 1-12 -->
-    {{-- <div class="level field">
-        <div class="level-item">
-            <label class="label" for="start">Start</label>
-        </div>
-        <div class="level-item">
-            <input type="text" class="input is-rounded {{ $errors->has('start') ? 'is-danger' : '' }}" placeholder="Starting month" value="{{ old('start') }}" name="start" id="sub-month" required>
-        </div>
-    </div> --}}
-
-    <div class="field level">
-        <div class="level-item">
-            <label class="label" for="start">Start</label>
-        </div>
-        <div class="control">
-            <div class="select" >
-            <select name="start">
-                <option value="-">-</option>
-                @for ($i = 1; $i <= 12; $i++)
-                    <option value="{{ $i }}">{{ $i }}</option>
-                @endfor
-            </select>
+            <div class="control">
+                <input type="text"
+                    class="input is-rounded {{ $errors->has('name') ? 'is-danger' : '' }}"
+                    placeholder="Full name" value="{{ old('name') }}"
+                    name="name" id="sub-name" required>
             </div>
         </div>
-    </div>
 
-    <div class="level field">
-        <div class="level-item">
-            <label class="label" for="duration">Duration</label>
+        <div class="field">
+            <label class="label" for="address">Address</label>
+            <div class="control">
+                <input type="text"
+                    class="input is-rounded {{ $errors->has('address') ? 'is-danger' : '' }}"
+                    placeholder="Address" value="{{ old('address') }}"
+                    name="address" id="sub-address" required>
+            </div>
         </div>
-        <div class="level-item">
-            <input type="text" class="input is-rounded {{ $errors->has('duration') ? 'is-danger' : '' }}" placeholder="Subscribtion Duration" value="{{ old('duration') }}" name="duration" id="sub-duration" required>
-        </div>
-    </div>
 
-    <!--TODO: Change to dropdown with all existing codes -->
-    <div class="level field">
-        <div class="level-item">
-            <label class="label" for="code">Code</label>
+        <div class="columns">
+            <div class="column">
+                <div class="field">
+                    <label class="label" for="start">Starting month</label>
+                    <div class="control">
+                        <div class="select" >
+                            <select name="start">
+                                <option value="-">-</option>
+                                @for ($i = 1; $i <= 12; $i++)
+                                    <option value="{{ $i }}">{{ $i }}</option>
+                                @endfor
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="field">
+                    <label class="label" for="code">Publication Code</label>
+                    <div class="control">
+                        <div class="select" >
+                            <select name="code">
+                                <option value="-">-</option>
+                                @for ($i = 1; $i <= 12; $i++)
+                                    <option value="{{ $i }}">{{ $i }}</option>
+                                @endfor
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="level-item">
-            <input type="text" class="input is-rounded {{ $errors->has('code') ? 'is-danger' : '' }}" placeholder="Publication code" value="{{ old('publication_code') }}" name="publication_code" id="sub-code" required>
-        </div>
-    </div>
 
-    <div class="level field">
-        <div class="level-item">
-            <label class="label" for="count">Count</label>
+        <div class="columns">
+            <div class="column">
+                <div class="field">
+                    <label class="label" for="duration">Duration</label>
+                    <div class="control">
+                        <input type="text"
+                            class="input is-rounded {{ $errors->has('duration') ? 'is-danger' : '' }}"
+                            placeholder="Subscribtion Duration" value="{{ old('duration') }}"
+                            name="duration" id="sub-duration" required>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="field">
+                    <label class="label" for="count">Count</label>
+                    <div class="control">
+                        <input type="text"
+                            class="input is-rounded {{ $errors->has('count') ? 'is-danger' : '' }}"
+                            placeholder="Publications count" value="{{ old('count') }}"
+                            name="count" id="sub-count" required>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="level-item">
-            <input type="text" class="input is-rounded {{ $errors->has('count') ? 'is-danger' : '' }}" placeholder="Publications count" value="{{ old('count') }}" name="count" id="sub-count" required>
-        </div>
-    </div>
 
-    <div class="level field">
-        <div class="level-item"></div>
-        <div class="control level-item">
+        <div class="has-text-centered">
             <button type="submit" class="button is-link is-rounded">Register subscriber</button>
         </div>
+
     </div>
 
 </form>
