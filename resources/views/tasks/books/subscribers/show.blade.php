@@ -1,6 +1,6 @@
 @extends('layouts/books')
 
-@section('title'))
+@section('title')
 
     {{ $subscriber->name }}
 
