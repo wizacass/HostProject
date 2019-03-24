@@ -25,7 +25,7 @@
             <tr>
                 <td>{{ $publication->name }}</td>
                 <td>{{ $publication->code }}</td>
-                <td>{{ number_format($publication->price*0.01, 2) }}</td>
+                <td>{{ $publication->getPrice() }}</td>
                 <td>
                     <form action="/tasks/books/publications/{{ $publication->id }}/">
                         <button class="button is-info is-rounded" type="submit">View</button>

@@ -19,7 +19,7 @@
 <ul>
     <li>{{ $publication->name }}</li>
     <li>{{ $publication->code }}</li>
-    <li>{{ $publication->price }}</li>
+    <li>{{ $publication->getPrice() }}</li>
 </ul>
 
 {{-- <form action="/tasks/books/publications/{{ $publication->id }}/edit">
