@@ -42,7 +42,10 @@
             <label class="label" for="name">Name</label>
         </div>
         <div class="level-item">
-            <input type="text" class="input is-rounded {{ $errors->has('name') ? 'is-danger' : '' }}" placeholder="Full name" value="{{ $subscriber->name }}" name="name" id="sub-name" required>
+            <input type="text"
+                class="input is-rounded {{ $errors->has('name') ? 'is-danger' : '' }}"
+                placeholder="Full name" value="{{ $subscriber->name }}"
+                name="name" id="sub-name" required>
         </div>
     </div>
 
@@ -86,7 +89,10 @@
             <label class="label" for="duration">Duration</label>
         </div>
         <div class="level-item">
-            <input type="text" class="input is-rounded {{ $errors->has('duration') ? 'is-danger' : '' }}" placeholder="Subscribtion Duration" value="{{ old('duration') }}" name="duration" id="sub-duration" required>
+            <input type="text"
+                class="input is-rounded {{ $errors->has('duration') ? 'is-danger' : '' }}"
+                placeholder="Subscribtion Duration" value="{{ old('duration') }}"
+                name="duration" id="sub-duration" required>
         </div>
     </div>
 
@@ -96,7 +102,10 @@
             <label class="label" for="code">Code</label>
         </div>
         <div class="level-item">
-            <input type="text" class="input is-rounded {{ $errors->has('code') ? 'is-danger' : '' }}" placeholder="Publication code" value="{{ old('publication_code') }}" name="publication_code" id="sub-code" required>
+            <input type="text"
+                class="input is-rounded {{ $errors->has('code') ? 'is-danger' : '' }}"
+                placeholder="Publication code" value="{{ old('publication_code') }}"
+                name="publication_code" id="sub-code" required>
         </div>
     </div>
 
@@ -105,7 +114,10 @@
             <label class="label" for="count">Count</label>
         </div>
         <div class="level-item">
-            <input type="text" class="input is-rounded {{ $errors->has('count') ? 'is-danger' : '' }}" placeholder="Publications count" value="{{ old('count') }}" name="count" id="sub-count" required>
+            <input type="text"
+                class="input is-rounded {{ $errors->has('count') ? 'is-danger' : '' }}"
+                placeholder="Publications count" value="{{ old('count') }}"
+                name="count" id="sub-count" required>
         </div>
     </div>
 

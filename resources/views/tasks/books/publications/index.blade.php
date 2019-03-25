@@ -35,7 +35,8 @@
                     <form method="POST" action="/tasks/books/publications/{{ $publication->id }}">
                         @csrf
                         @method('DELETE')
-                        <button class="button is-danger is-rounded" type="submit">Delete</button>
+                        <button class="button is-danger is-rounded" type="submit"
+                        onclick="return confirmDelete('{{$publication->code}}')">Delete</button>
                     </form>
                 </td>
             </tr>
@@ -70,7 +71,10 @@
             <label class="label" for="name">Name</label>
         </div>
         <div class="level-item">
-            <input type="text" class="input is-rounded {{ $errors->has('name') ? 'is-danger' : '' }}" placeholder="Book Title" value="{{ old('name') }}" name="name" id="pub-name" required>
+            <input type="text"
+                class="input is-rounded {{ $errors->has('name') ? 'is-danger' : '' }}"
+                placeholder="Book Title" value="{{ old('name') }}"
+                name="name" id="pub-name" required>
         </div>
     </div>
 
@@ -79,7 +83,10 @@
             <label class="label" for="code">Code</label>
         </div>
         <div class="level-item">
-            <input type="text" class="input is-rounded {{ $errors->has('code') ? 'is-danger' : '' }}" placeholder="Book Code" value="{{ old('code') }}" name="code" id="pub-code" required>
+            <input type="text"
+                class="input is-rounded {{ $errors->has('code') ? 'is-danger' : '' }}"
+                placeholder="Book Code" value="{{ old('code') }}"
+                name="code" id="pub-code" required>
         </div>
     </div>
 
@@ -88,7 +95,10 @@
             <label class="label" for="price">Price</label>
         </div>
         <div class="level-item">
-            <input type="text" class="input is-rounded {{ $errors->has('price') ? 'is-danger' : '' }}" placeholder="Book price (decimal value)" value="{{ old('price') }}" name="price" id="pub-price">
+            <input type="text"
+                class="input is-rounded {{ $errors->has('price') ? 'is-danger' : '' }}"
+                placeholder="Book price (decimal value)" value="{{ old('price') }}"
+                name="price" id="pub-price">
         </div>
     </div>
 

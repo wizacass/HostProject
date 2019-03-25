@@ -43,7 +43,8 @@
                     <form method="POST" action="/tasks/books/subscribers/{{ $subscriber->id }}">
                         @csrf
                         @method('DELETE')
-                        <button class="button is-danger is-rounded" type="submit">Delete</button>
+                        <button class="button is-danger is-rounded" type="submit"
+                        onclick="return confirmDelete('{{$subscriber->code}}')">Delete</button>
                     </form>
                 </td>
             </tr>

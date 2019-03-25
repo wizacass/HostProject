@@ -39,32 +39,10 @@
     <form method="POST" action="">
         @csrf
         @method('DELETE')
-        <button class="button is-danger" id="btn_delete" type="submot" onclick="return confirmDelete('{{$publication->code}}')">Delete</button>
+        <button class="button is-danger" type="submit"
+        onclick="return confirmDelete('{{$publication->code}}')">Delete</button>
     </form>
 
 </div>
-
-<script>
-function confirmDelete(code) {
-
-    if(!confirm('Are you sure?')) {
-        event.preventDefault();
-    }
-
-    // swal({
-    //     title: "Are you sure?",
-    //     text: code + " will be deleted",
-    //     icon: "error",
-    //     buttons: true,
-    //     dangerMode: true,
-    // }).then((willDelete) => {
-    //     if(willDelete)
-    //     {
-    //         event.preventDefault();
-    //         document.getElementById("btn_delete").type = "submit";
-    //     }
-    // });
-}
-</script>
 
 @endsection
