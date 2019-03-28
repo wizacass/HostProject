@@ -8,6 +8,7 @@
 <ul>
     <li><a href='books/publications'>Publications information</a></li>
     <li><a href='books/subscribers'>Subscribers information</a></li>
+    <li><a href='books/data'>Data tables</a></li>
 </ul>
 
 @endsection

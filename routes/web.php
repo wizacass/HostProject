@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/diary', 'DiaryController@home');
-Route::get('/tasks', function(){
+Route::get('/tasks', function() {
     return view('/tasks/index');
 });
 
@@ -25,11 +25,14 @@ Route::post('/tasks/validation', 'ParticipantsController@store');
 Route::delete('/tasks/validation', 'ParticipantsController@destroy');
 Route::resource('/tasks/list', 'TasksController');
 
-Route::get('/tasks/books', function(){
+Route::get('/tasks/books', function() {
     return view('/tasks/books/index');
 });
 Route::resource('/tasks/books/publications', 'PublicationsController');
 Route::resource('/tasks/books/subscribers', 'SubscribersController');
+Route::get('/tasks/books/data', function() {
+    return view('tasks/books/data');
+});
 
 Route::get('/apps', 'AppsController@home');
 Route::get('/apps/binary', 'AppsController@binary');
