@@ -30,9 +30,7 @@ Route::get('/tasks/books', function() {
 });
 Route::resource('/tasks/books/publications', 'PublicationsController');
 Route::resource('/tasks/books/subscribers', 'SubscribersController');
-Route::get('/tasks/books/data', function() {
-    return view('tasks/books/data');
-});
+Route::get('/tasks/books/data', 'BooksDataController@home');
 
 Route::get('/apps', 'AppsController@home');
 Route::get('/apps/binary', 'AppsController@binary');
