@@ -35,7 +35,7 @@
     </tr>
     <tr>
         <th>Publication code</th>
-        <td>{{ $subscriber->publication_code }}</td>
+        <td><a href="/tasks/books/publications/{{ $subscriber->publication_id() }}/">{{ $subscriber->publication_code }}</a></td>
     </tr>
     <tr>
         <th>Count</th>

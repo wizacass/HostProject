@@ -21,6 +21,7 @@ class CreateSubscribersTable extends Migration
             $table->integer('duration');
             $table->string('publication_code');
             $table->integer('count');
+            $table->integer('publication_id');
             $table->timestamps();
         });
     }

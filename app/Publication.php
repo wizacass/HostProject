@@ -14,4 +14,14 @@ class Publication extends Model
     {
         return number_format($this->price * 0.01, 2).'$';
     }
+
+    public function subscribers()
+    {
+        return $this->hasMany(Subscriber::class);
+    }
+
+    public function addSubscriber($subscriber)
+    {
+        $this->subscribers()->create($subscriber);
+    }
 }

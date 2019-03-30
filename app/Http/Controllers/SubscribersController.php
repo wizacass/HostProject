@@ -47,9 +47,13 @@ class SubscribersController extends Controller
             'count' => ['required', 'integer', 'between:1,20']
         ]);
 
-        //dd($attributes);
 
-        Subscriber::create($attributes);
+        $publication = Publication::where('code', $attributes['publication_code'])->firstOrFail();
+        //$subscriber = Subscriber::create($attributes);
+
+        //dd($publication);
+
+        $publication->addSubscriber($attributes);
 
         return redirect('tasks/books/subscribers');
     }
