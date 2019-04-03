@@ -29,6 +29,10 @@
         <th>Price</th>
         <td>{{ $publication->getPrice() }}</td>
     </tr>
+    <tr>
+        <th>Current profit</th>
+        <td>{{ $publication->getProfit() }}</td>
+    </tr>
 </table>
 
 <div class="buttons">
